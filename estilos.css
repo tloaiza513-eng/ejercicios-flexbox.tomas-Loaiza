@@ -1,0 +1,368 @@
+/* ==========================================================
+   style.css - Estilos compartidos para los Ejercicios Flexbox
+   Cada ejercicio usa una clase en <body> (ej1, ej2, ... ej7)
+   ========================================================== */
+
+/* ---------- Reset general ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+
+/* ==========================================================
+   EJERCICIO 1: Menú horizontal
+   ========================================================== */
+.ej1 .menu {
+  display: flex;
+  justify-content: space-between; /* misma distancia entre bloques */
+  align-items: center;
+  padding: 20px 40px;
+}
+
+.ej1 .logo img {
+  height: 70px;
+  width: auto;
+}
+
+.ej1 .navegacion {
+  display: flex;
+}
+
+.ej1 .navegacion li {
+  margin: 0 15px;
+}
+
+.ej1 .navegacion a {
+  font-family: "Times New Roman", serif;
+  text-transform: uppercase;
+  font-size: 18px;
+  color: #777;
+}
+
+.ej1 .idiomas {
+  display: flex;
+}
+
+.ej1 .idiomas li {
+  margin-left: 12px;
+}
+
+.ej1 .idiomas a {
+  display: block;
+  padding: 14px 10px;
+  background: #888;
+  color: #fff;
+  font-family: "Times New Roman", serif;
+  font-size: 18px;
+}
+
+
+/* ==========================================================
+   EJERCICIO 2: Menú vertical
+   ========================================================== */
+.ej2 .menu-vertical {
+  width: 600px;
+  margin: 40px auto;
+}
+
+.ej2 .menu-vertical li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #ddd;
+  padding: 25px 15px;
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  font-size: 18px;
+}
+
+.ej2 .menu-vertical a {
+  background: #fff;
+  padding: 5px 8px;
+}
+
+
+/* ==========================================================
+   EJERCICIO 3: Centrar en página
+   ========================================================== */
+.ej3 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center; /* horizontal */
+  align-items: center;     /* vertical */
+  background: #f2f1ef;
+}
+
+.ej3 .caja {
+  width: 360px;
+  padding: 20px 15px;
+  background: #e9e6e2;
+  color: #555;
+  line-height: 1.5;
+}
+
+.ej3 .caja h2 {
+  font-size: 15px;
+  margin-bottom: 20px;
+  color: #444;
+}
+
+
+/* ==========================================================
+   EJERCICIO 4: Galería de imágenes adaptable
+   ========================================================== */
+.ej4 .galeria {
+  display: flex;
+  flex-wrap: wrap;   /* salta de línea cuando no hay espacio */
+  gap: 15px;
+  padding: 20px;
+}
+
+.ej4 .galeria img {
+  flex: 1 1 150px;   /* crece, encoge, base de 150px */
+  max-width: 250px;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+
+/* ==========================================================
+   EJERCICIO 5: Layout de 3 columnas
+   ========================================================== */
+.ej5 {
+  min-height: 100vh;       /* ocupa toda la pantalla */
+  display: flex;
+  flex-direction: column;
+}
+
+.ej5 header {
+  background: #f1f1f1;
+  padding: 25px;
+  text-align: center;
+}
+
+.ej5 main {
+  flex: 1;                 /* ocupa el espacio sobrante */
+  display: flex;
+}
+
+/* El HTML está en orden article, nav, aside; con order se reubican */
+.ej5 nav {
+  order: 1;
+  flex: 1;
+  background: #b9b9b9;
+  padding: 8px;
+}
+
+.ej5 article {
+  order: 2;
+  flex: 2;                 /* doble de ancho que el resto */
+  background: #a8a8a8;
+  padding: 8px;
+}
+
+.ej5 article h2 {
+  margin-bottom: 8px;
+}
+
+.ej5 aside {
+  order: 3;
+  flex: 1;
+  background: #c9c9c9;
+  padding: 8px;
+}
+
+.ej5 footer {
+  background: #f1f1f1;
+  padding: 20px;
+  text-align: center;
+}
+
+
+/* ==========================================================
+   EJERCICIO 6: Pricing box
+   ========================================================== */
+.ej6 {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #93d9e9;
+}
+
+.ej6 .precios {
+  display: flex;
+  gap: 15px;
+}
+
+.ej6 .caja-precio {
+  width: 250px;
+  min-height: 480px;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
+  overflow: hidden;
+}
+
+.ej6 .caja-precio h2 {
+  background: salmon;
+  padding: 30px 10px;
+  text-align: center;
+  font-size: 18px;
+}
+
+.ej6 .caja-precio ul {
+  padding: 25px 10px;
+}
+
+.ej6 .caja-precio li {
+  padding: 6px 0;
+  text-align: center;
+  font-size: 13px;
+  border-bottom: 1px solid #eee;
+}
+
+.ej6 .caja-precio button {
+  margin: auto 0 15px;     /* empuja el botón al fondo */
+  align-self: center;
+  padding: 10px 35px;
+  border: none;
+  border-radius: 4px;
+  background: #eee;
+  cursor: pointer;
+}
+
+.ej6 .caja-precio button:hover {
+  background: #ddd;
+}
+
+
+/* ==========================================================
+   EJERCICIO 7: Layout completo
+   ========================================================== */
+.ej7 {
+  background: #f0f0f0;
+}
+
+.ej7 .pagina {
+  max-width: 1000px;       /* ancho máximo */
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;  /* footer siempre abajo */
+  background: #fff;
+}
+
+.ej7 header {
+  background: salmon;
+  color: #fff;
+  text-align: center;
+  padding: 45px 20px;
+}
+
+.ej7 header h1 {
+  margin-bottom: 15px;
+}
+
+.ej7 .menu {
+  display: flex;
+  align-items: center;
+  background: #1abc9c;
+  padding: 0 25px;
+}
+
+.ej7 .menu a {
+  display: block;
+  padding: 12px 15px;
+  color: #fff;
+}
+
+.ej7 .menu .idiomas {
+  margin-left: auto;       /* idiomas a la derecha */
+}
+
+.ej7 .menu ul {
+  display: flex;
+}
+
+.ej7 .contenedor {
+  flex: 1;                 /* empuja el footer al borde inferior */
+  display: flex;
+}
+
+.ej7 aside {
+  flex: 0 0 30%;           /* 30% */
+  background: #f0f0f0;
+  padding: 20px;
+}
+
+.ej7 aside h2 {
+  margin-bottom: 15px;
+}
+
+.ej7 aside img,
+.ej7 aside p {
+  margin-bottom: 15px;
+}
+
+.ej7 main {
+  flex: 0 0 70%;           /* 70% */
+  padding: 20px;
+}
+
+.ej7 article {
+  margin-bottom: 30px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #333;
+}
+
+.ej7 article h2 {
+  margin-bottom: 15px;
+}
+
+.ej7 article .fecha {
+  font-size: 12px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.ej7 article img {
+  width: 100%;
+  margin-bottom: 15px;
+}
+
+.ej7 article p {
+  line-height: 1.5;
+  margin-bottom: 10px;
+}
+
+.ej7 footer {
+  background: #ddd;
+  text-align: center;
+  padding: 25px;
+  font-weight: bold;
+}
